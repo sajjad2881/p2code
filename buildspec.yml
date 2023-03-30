@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Building frontend..."
+      - mkdir build
+      - cp index.html build/
+      - cp -r assets build/
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'build'
