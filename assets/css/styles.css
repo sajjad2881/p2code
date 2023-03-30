@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+.search-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.search-bar {
+    position: relative;
+    display: inline-block;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50;
+}
+
+.search-buttons {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    display: flex; /* Add display flex to align buttons */
+}
+
+button#search-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-right: 10px; /* Add margin to separate the search button from the microphone button */
+}
+
+.voice-search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.voice-search-btn img {
+    height: 20px;
+}
+
+/* Other styles remain the same */
+
+h1 {
+    color: #3a3a3a;
+    text-align: center;
+    padding: 20px;
+}
+h2 {
+    color: #3a3a3a;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+input, button {
+    margin-top: 10px;
+}
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+button:hover {
+    background-color: #45a049;
+}
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+}
+#gallery img {
+    max-width: 200px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+#gallery img:hover {
+    transform: scale(1.1);
+}
+.upload-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.custom-file-upload:hover {
+    background-color: #45a049;
+}
+
+.upload-input {
+    margin: 10px;
+    padding: 10px;
+    width: 80%; /* Adjust width as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.upload-input:focus {
+    border-color: #4CAF50;
+}
+
+.upload-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.upload-btn:hover {
+    background-color: #45a049;
+}
+
