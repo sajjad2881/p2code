@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Frontend</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    
+    <script type="text/javascript" src="./assets/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="./assets/js/sdk/apigClient.js"></script>
+
+
+</head>
+<body>
+    <h1>Fun Photo App!</h1>
+
+    <h2>Search</h2>
+    <input type="text" id="search-query" placeholder="Search for pictures">
+    <button id="search-btn">Search</button>
+
+    <h2>Upload</h2>
+    <input type="file" id="upload-photo">
+    <input type="text" id="custom-labels" placeholder="Custom labels (comma-separated)">
+    <button id="upload-btn">Upload</button>
+
+    <h2>Gallery</h2>
+    <div id="gallery"></div>
+
+    <script src="./assets/js/scripts.js"></script>
+</body>
+</html>
