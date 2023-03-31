@@ -24,14 +24,34 @@
 <body>
     <h1>Psuedo Google Photo</h1>
 
-    <h2>Search</h2>
-    <input type="text" id="search-query" placeholder="Search for pictures">
-    <button id="search-btn">Search</button>
 
-    <h2>Upload</h2>
-    <input type="file" id="upload-photo">
-    <input type="text" id="custom-labels" placeholder="Custom labels (comma-separated)">
-    <button id="upload-btn">Upload</button>
+    <div class="search-container">
+        <h2>Search</h2>
+        <div class="search-bar">
+            <input type="text" id="search-query" placeholder="Search for pictures">
+            <div class="search-buttons">
+                <button id="search-btn">Search</button>
+                <button id="voice-search-btn" class="voice-search-btn">
+                    <img src="./assets/images/microphone.png" alt="Voice Search">
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+   
+
+    <div class="upload-container">
+        <h2>Upload</h2>
+        <div class="upload-section">
+            <label for="upload-photo" class="custom-file-upload">Choose File</label>
+            <input type="file" id="upload-photo" class="upload-input" style="display: none;">
+            <input type="text" id="custom-labels" class="upload-input" placeholder="Custom labels (comma-separated)">
+            <button id="upload-btn" class="upload-btn">Upload</button>
+        </div>
+    </div>
+    
+    
 
     <h2>Gallery</h2>
     <div id="gallery"></div>
