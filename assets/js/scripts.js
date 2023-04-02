@@ -32,7 +32,7 @@ function startVoiceRecognition() {
   function performSearch(query) {
     // Encode the query to ensure special characters are handled correctly in the URL
     const encodedQuery = encodeURIComponent(query);
-    const params = { q: encodedQuery };
+    const params = { q: encodedQuery,  'x-api-key': 'SF4HWtJK2laqWpI8Oll459AyGwEEAvQtauktC6Zf'};
   
     console.log('Search request:', `/search?q=${encodedQuery}`);
   
