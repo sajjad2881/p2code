@@ -47,7 +47,7 @@ function startVoiceRecognition() {
     //});
       
   
-    apigClient.searchGet(params)
+    apigClient.searchGet(params, additionalParams)
       .then(function(result) {
         console.log('API Response:', result.data);
         const gallery = document.getElementById('gallery');
