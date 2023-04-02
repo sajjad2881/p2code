@@ -41,10 +41,10 @@ function startVoiceRecognition() {
   
     console.log('Search request:', `/search?q=${encodedQuery}`);
      
-    apigClient.addRequestInterceptor(function(request) {
-        request.headers['x-api-key'] = 'SF4HWtJK2laqWpI8Oll459AyGwEEAvQtauktC6Zf';
-        return request;
-    });
+    //apigClient.addRequestInterceptor(function(request) {
+    //    request.headers['x-api-key'] = 'SF4HWtJK2laqWpI8Oll459AyGwEEAvQtauktC6Zf';
+    //    return request;
+    //});
       
   
     apigClient.searchGet(params)
