@@ -28,7 +28,39 @@ function startVoiceRecognition() {
     recognition.start();
   }
 
-  
+  function performSearch(query) {
+    // Encode the query to ensure special characters are handled correctly in the URL
+    const encodedQuery = encodeURIComponent(query);
+    const params = { q: encodedQuery };
+    const additionalParams = {
+        headers: {
+            'x-api-key': 'SF4HWtJK2laqWpI8Oll459AyGwEEAvQtauktC6Zf'
+        }
+    };
+
+    console.log('Search request:', `/search?q=${encodedQuery}`);
+
+    apigClient.searchGet(params, null, additionalParams)
+        .then(function(result) {
+            console.log('API Response:', result.data);
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = '';
+
+            // Update this line to access the 'results' property in the response object
+            result.data.results.forEach(photo => {
+                // Update this line to use the 'url' property of the Photo object
+                const img = document.createElement('img');
+                img.src = photo.url;
+                gallery.appendChild(img);
+            });
+        })
+        .catch(function(result) {
+            console.error('Error:', result);
+        });
+}
+
+
+  /*
   function performSearch(query) {
     console.log("In the search function")
     const encodedQuery = encodeURIComponent(query);
@@ -60,6 +92,7 @@ function startVoiceRecognition() {
         console.error('Error:', result);
       });
   }
+  */
 
   
   searchBtn.addEventListener('click', () => {
@@ -105,5 +138,3 @@ uploadBtn.addEventListener('click', () => {
 
     
 });
-
-
