@@ -40,13 +40,32 @@ function startVoiceRecognition() {
     };
   
     console.log('Search request:', `/search?q=${encodedQuery}`);
-     
+      
+    apigClient.searchGet = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+
+        apiGateway.core.utils.assertParametersDefined(params, ['q'], ['body']);
+
+        var searchGetRequest = {
+            verb: 'get'.toUpperCase(),
+            path: pathComponent + uritemplate('/search').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, ['q']),
+            body: body
+        };
+
+        // Merge additionalParams.headers into searchGetRequest.headers
+        searchGetRequest.headers = Object.assign({}, searchGetRequest.headers, additionalParams.headers);
+
+        return apiGatewayClient.makeRequest(searchGetRequest, authType, additionalParams, config.apiKey);
+    };
+      
     //apigClient.addRequestInterceptor(function(request) {
     //    request.headers['x-api-key'] = 'SF4HWtJK2laqWpI8Oll459AyGwEEAvQtauktC6Zf';
     //    return request;
     //});
       
-  
+  /*
     apigClient.searchGet(params, additionalParams)
       .then(function(result) {
         console.log('API Response:', result.data);
@@ -65,6 +84,8 @@ function startVoiceRecognition() {
         console.error('Error:', result);
       });
   }
+  */
+      
   /*
 
   function displayImage(base64Image, format) {
