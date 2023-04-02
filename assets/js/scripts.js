@@ -32,9 +32,14 @@ function startVoiceRecognition() {
   function performSearch(query) {
     // Encode the query to ensure special characters are handled correctly in the URL
     const encodedQuery = encodeURIComponent(query);
-    const params = { q: encodedQuery,  'x-api-key': 'SF4HWtJK2laqWpI8Oll459AyGwEEAvQtauktC6Zf'};
+    const params = { q: encodedQuery };
   
     console.log('Search request:', `/search?q=${encodedQuery}`);
+     
+    apigClient.addRequestInterceptor(function(request) {
+        request.headers['x-api-key'] = 'SF4HWtJK2laqWpI8Oll459AyGwEEAvQtauktC6Zf';
+        return request;
+    });
   
     apigClient.searchGet(params)
       .then(function(result) {
